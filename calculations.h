@@ -1,20 +1,44 @@
-//
-// Created by Alex Nolen on 10/21/24.
-//
+#ifndef GYMNERDS_USER_H
+#define GYMNERDS_USER_H
 
-// calculations.h
-#ifndef GYMNERD_CALCULATIONS_H
-#define GYMNERD_CALCULATIONS_H
-
-// Class for fitness calculations
-class Calculations {
+//base class for a user in our fitness app
+class User {
 public:
-    static double calculateBMI(double weight, double height);
-    static double calculateBMR(double weight, double height, int age);
-    static double calculateStrength(int bench, int squat, double weight);
-    static double calculateVitality(int age, int waist, double height);
-    static double calculateAgility(double weight, double height, double sprint);
-    static char calculateScore(double weight, double height, int bench, int squat, int sprint);
+    User (int userAge, double userWeight, double userHeight);//Constructor for User
+    virtual double calcBMR() const = 0;
+    virtual double calcBMI() const;
+    virtual int calcStrength(double bench, double squat) const = 0;
+    virtual int calcVitality(double sprintTime) const = 0;
+    virtual int calcAgility(double sprintTime) const = 0;
+    virtual char calcRank(double bench, double squat, double sprintTime) const = 0;
+    virtual ~User() = default;
+
+protected:
+    int age;
+    double weight;
+    double height;
 };
 
-#endif // GYMNERD_CALCULATIONS_H
+//male subclass
+class Male : public User {
+public:
+    Male(int userAge, double userWeight, double userHeight);
+    double calcBMR() const override;
+    int calcStrength(double bench, double squat) const override;
+    int calcVitality(double sprintTime) const override;
+    int calcAgility(double sprintTime) const override;
+    char calcRank(double bench, double squat, double sprintTime) const override;
+};
+
+//female subclass
+class Female : public User {
+public:
+    Female(int userAge, double userWeight, double userHeight);
+    double calcBMR() const override;
+    int calcStrength(double bench, double squat) const override;
+    int calcVitality(double sprintTime) const override;
+    int calcAgility(double sprintTime) const override;
+    char calcRank(double bench, double squat, double sprintTime) const override;
+};
+
+#endif // GYMNERDS_USER_H
