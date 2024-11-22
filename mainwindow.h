@@ -2,33 +2,40 @@
 #define GYMNERDS_MAINWINDOW_H
 
 #include <QMainWindow>
+#include "userinfo.h"
 #include "statscreen.h"
+#include "profilechooser.h"
 #include "BackgroundWidget.h"
 
-QT_BEGIN_NAMESPACE
 namespace Ui {
     class MainWindow;
 }
-QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
 {
-    Q_OBJECT
+Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 protected:
     void resizeEvent(QResizeEvent *event) override;
 
 private slots:
-            void openUserInfo();
+    void onNewUserButtonClicked();
+    void onExistingUserButtonClicked();
 
-private://making the instances for the ui and border
+private:
+    //pointers
     Ui::MainWindow *ui;
     BackgroundWidget *backgroundWidget;
-    statscreen *statsScreen;
+
 };
+
+extern ProfileChooser* _profileChooser;
+extern statscreen* _stats;
+
+#endif // GYMNERDS_MAINWINDOW_H
 
 #endif //GYMNERDS_MAINWINDOW_H
