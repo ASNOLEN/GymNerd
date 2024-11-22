@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QLabel>
 #include "BackgroundWidget.h"
+#include <QJsonObject>
 
 namespace Ui {
     class userinfo;
@@ -11,7 +12,7 @@ namespace Ui {
 
 class userinfo : public QWidget
 {
-    Q_OBJECT
+Q_OBJECT
 
 public:
     explicit userinfo(QWidget *parent = nullptr);
@@ -21,11 +22,19 @@ protected:
     void resizeEvent(QResizeEvent *event) override;
 
 private slots:
-            void processUserData();
+    void processUserData();
+    void onMetricSelected();
+    void onImperialSelected();
 
-private://making the instances for the window
+private:
     Ui::userinfo *ui;
     BackgroundWidget *backgroundWidget;
+    bool isMetric;
+
+
+    void saveUserData(const QString& name, int age, double weight, double height,
+                      double bmi, double bmr, int strength, int vitality,
+                      int agility, char rank);
 };
 
-#endif //GYMNERDS_USERINFO_H
+#endif // GYMNERDS_USERINFO_H
