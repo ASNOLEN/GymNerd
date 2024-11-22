@@ -410,17 +410,81 @@
   <widget class="QTextEdit" name="username">
    <property name="geometry">
     <rect>
-     <x>560</x>
+     <x>290</x>
      <y>130</y>
-     <width>141</width>
+     <width>211</width>
      <height>41</height>
     </rect>
+   </property>
+   <property name="palette">
+    <palette>
+     <active>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>153</red>
+         <green>182</green>
+         <blue>199</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>8</red>
+         <green>19</green>
+         <blue>41</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </active>
+     <inactive>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>153</red>
+         <green>182</green>
+         <blue>199</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>8</red>
+         <green>19</green>
+         <blue>41</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </inactive>
+     <disabled>
+      <colorrole role="Base">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>8</red>
+         <green>19</green>
+         <blue>41</blue>
+        </color>
+       </brush>
+      </colorrole>
+      <colorrole role="Window">
+       <brush brushstyle="SolidPattern">
+        <color alpha="255">
+         <red>8</red>
+         <green>19</green>
+         <blue>41</blue>
+        </color>
+       </brush>
+      </colorrole>
+     </disabled>
+    </palette>
    </property>
   </widget>
   <widget class="QDoubleSpinBox" name="weightuser">
    <property name="geometry">
     <rect>
-     <x>460</x>
+     <x>270</x>
      <y>230</y>
      <width>62</width>
      <height>22</height>
@@ -436,8 +500,8 @@
   <widget class="QDoubleSpinBox" name="heightuser">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>300</y>
+     <x>270</x>
+     <y>290</y>
      <width>62</width>
      <height>22</height>
     </rect>
@@ -452,7 +516,7 @@
   <widget class="QDoubleSpinBox" name="benchm">
    <property name="geometry">
     <rect>
-     <x>750</x>
+     <x>600</x>
      <y>230</y>
      <width>62</width>
      <height>22</height>
@@ -465,8 +529,8 @@
   <widget class="QDoubleSpinBox" name="squatm">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>300</y>
+     <x>600</x>
+     <y>290</y>
      <width>62</width>
      <height>22</height>
     </rect>
@@ -478,8 +542,8 @@
   <widget class="QDoubleSpinBox" name="age">
    <property name="geometry">
     <rect>
-     <x>750</x>
-     <y>370</y>
+     <x>720</x>
+     <y>360</y>
      <width>62</width>
      <height>22</height>
     </rect>
@@ -491,8 +555,8 @@
   <widget class="QDoubleSpinBox" name="sprintuser">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>370</y>
+     <x>440</x>
+     <y>360</y>
      <width>62</width>
      <height>22</height>
     </rect>
@@ -507,7 +571,7 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>480</x>
+     <x>210</x>
      <y>140</y>
      <width>91</width>
      <height>21</height>
@@ -520,7 +584,7 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>120</x>
      <y>230</y>
      <width>131</width>
      <height>21</height>
@@ -533,8 +597,8 @@
   <widget class="QLabel" name="label_4">
    <property name="geometry">
     <rect>
-     <x>320</x>
-     <y>300</y>
+     <x>120</x>
+     <y>290</y>
      <width>131</width>
      <height>21</height>
     </rect>
@@ -546,60 +610,60 @@
   <widget class="QLabel" name="label_5">
    <property name="geometry">
     <rect>
-     <x>200</x>
-     <y>370</y>
-     <width>241</width>
+     <x>120</x>
+     <y>360</y>
+     <width>311</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Max Sprint Time (sec)  :</string>
+    <string>100 meter sprint Time  (sec)  :</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>570</x>
+     <x>450</x>
      <y>230</y>
      <width>171</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Max Bench (lb) :</string>
+    <string>Max Bench :</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>570</x>
-     <y>300</y>
+     <x>450</x>
+     <y>290</y>
      <width>171</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Max Squat (lb) :</string>
+    <string>Max Squat :</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_8">
    <property name="geometry">
     <rect>
-     <x>680</x>
-     <y>370</y>
-     <width>61</width>
+     <x>560</x>
+     <y>360</y>
+     <width>141</width>
      <height>21</height>
     </rect>
    </property>
    <property name="text">
-    <string>Age :</string>
+    <string>Age (Years) :</string>
    </property>
   </widget>
   <widget class="QRadioButton" name="male">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>130</y>
+     <x>520</x>
+     <y>120</y>
      <width>99</width>
      <height>20</height>
     </rect>
@@ -611,8 +675,8 @@
   <widget class="QRadioButton" name="female">
    <property name="geometry">
     <rect>
-     <x>720</x>
-     <y>160</y>
+     <x>520</x>
+     <y>150</y>
      <width>99</width>
      <height>20</height>
     </rect>
@@ -621,7 +685,62 @@
     <string>female</string>
    </property>
   </widget>
+  <widget class="QRadioButton" name="Metric">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>250</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>metric</string>
+   </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup</string>
+   </attribute>
+  </widget>
+  <widget class="QRadioButton" name="Imperial">
+   <property name="geometry">
+    <rect>
+     <x>790</x>
+     <y>280</y>
+     <width>131</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Imperial </string>
+   </property>
+   <attribute name="buttonGroup">
+    <string notr="true">buttonGroup</string>
+   </attribute>
+  </widget>
+  <widget class="QLabel" name="label_9">
+   <property name="geometry">
+    <rect>
+     <x>720</x>
+     <y>220</y>
+     <width>231</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Verdana</family>
+     <pointsize>12</pointsize>
+     <bold>true</bold>
+    </font>
+   </property>
+   <property name="text">
+    <string>Enter type of measurment system</string>
+   </property>
+  </widget>
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup"/>
+ </buttongroups>
 </ui>
