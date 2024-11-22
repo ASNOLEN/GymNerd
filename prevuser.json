@@ -1,0 +1,28 @@
+{
+    "users": [
+        {
+            "age": 22,
+            "agility": 21,
+            "bmi": 14.346938775510203,
+            "bmr": 1460.2,
+            "grade": "D",
+            "height": 70,
+            "name": "Beta",
+            "strength": 11,
+            "vitality": 40,
+            "weight": 100
+        },
+        {
+            "age": 19,
+            "agility": 21,
+            "bmi": 29.101813271604936,
+            "bmr": 2121.7856,
+            "grade": "B",
+            "height": 72,
+            "name": "Robert\tBenstine",
+            "strength": 20,
+            "vitality": 40,
+            "weight": 214.6
+        }
+    ]
+}
