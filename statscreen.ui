@@ -404,8 +404,8 @@
   <widget class="QPushButton" name="backbutton">
    <property name="geometry">
     <rect>
-     <x>10</x>
-     <y>10</y>
+     <x>70</x>
+     <y>40</y>
      <width>121</width>
      <height>41</height>
     </rect>
@@ -851,8 +851,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <widget class="QLabel" name="label_6">
    <property name="geometry">
     <rect>
-     <x>550</x>
-     <y>270</y>
+     <x>630</x>
+     <y>240</y>
      <width>321</width>
      <height>121</height>
     </rect>
@@ -864,8 +864,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <widget class="QLabel" name="label_7">
    <property name="geometry">
     <rect>
-     <x>680</x>
-     <y>360</y>
+     <x>760</x>
+     <y>340</y>
      <width>58</width>
      <height>16</height>
     </rect>
@@ -898,6 +898,58 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="text">
     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;unknown&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="dailyChallengeButton">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>350</y>
+     <width>100</width>
+     <height>32</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Completed</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>260</y>
+     <width>141</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>weekly challenge:</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>310</y>
+     <width>171</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>100 pushups, 100 situps</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>450</x>
+     <y>330</y>
+     <width>131</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>and 10 km run a day</string>
    </property>
   </widget>
  </widget>
