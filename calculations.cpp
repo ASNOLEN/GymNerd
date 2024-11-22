@@ -1,4 +1,4 @@
-// calculations.cpp
+//calculations.cpp
 //calculations for the users stats
 #include "calculations.h"
 
@@ -14,7 +14,7 @@ double User::calcBMI() const {
 //male subclass constructor with its own calculations
 Male::Male(int userAge, double userWeight, double userHeight)
         : User(userAge, userWeight, userHeight) {}
-
+//calc stats
 double Male::calcBMR() const {
     return (4.536 * weight) + (15.88 * height) - (5 * age) + 5;
 }
@@ -38,9 +38,9 @@ int Male::calcAgility(double sprintTime) const {
     return agility;
 }
 
-
+//scoring the male inputs with average to give rank
 char Male::calcRank(double bench, double squat, double sprintTime) const {
- 
+
     double scoreh = ((height - 69) / 69) * 100;
     double scorew = ((weight - 200) / 200) * 100;
     double scoreb = ((bench - 250) / 250) * 100;
@@ -62,25 +62,29 @@ char Male::calcRank(double bench, double squat, double sprintTime) const {
 //female subclass constructor with its own calculations
 Female::Female(int userAge, double userWeight, double userHeight)
         : User(userAge, userWeight, userHeight) {}
-
+//calc stats
 double Female::calcBMR() const {
     return (4.536 * weight) + (15.88 * height) - (5 * age) - 161;
 }
+
 int Female::calcStrength(double bench, double squat) const {
     return static_cast<int>(((bench + squat) / (90 + (1.6 * weight))) * 20);
 }
+
 int Female::calcVitality(double sprintTime) const {
     int vitality = 35;
     vitality += (age > 30) ? (age - 30) * 0.5 : 0;
     vitality -= (sprintTime / height > 0.5) ? (sprintTime / height - 0.5) * 45 : 0;
     return vitality;
 }
+
 int Female::calcAgility(double sprintTime) const {
     int agility = 18;
     agility += (weight > 200 && height < 64) ? (weight - 160) * 0.4 : 0;
     agility += static_cast<int>(agility / sprintTime);
     return agility;
 }
+//scoring the male inputs with average to give rank
 char Female::calcRank(double bench, double squat, double sprintTime) const {
     double scoreh = ((height - 64) / 64) * 100;
     double scorew = ((weight - 170) / 170) * 100;
