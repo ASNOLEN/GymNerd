@@ -1,53 +1,20 @@
-name: Scorecard supply-chain security
-on:
-  schedule:
-    - cron: '33 6 * * 2'
-  push:
-    branches: [ "main" ]
-
-permissions: 
-  read-all
-
-jobs:
-  analysis:
-    name: Scorecard analysis
-    runs-on: ubuntu-latest
-    permissions:
-      security-events: write
-      id-token: write
-
-    steps:
-      - name: "Checkout code"
-        uses: actions/checkout@v2  # Ensure you are using the latest stable version
-        with:
-          persist-credentials: false
-
-      - name: "Run Scorecard analysis"
-        uses: ossf/scorecard-action@v2
-        with:
-          results_file: results.sarif
-          results_format: sarif
-          publish_results: true
-
-      - name: "Check if results.sarif exists"
-        run: |
-          if [ ! -f results.sarif ]; then
-            echo "Error: results.sarif file does not exist"
-            exit 1
-          else
-            echo "results.sarif exists"
-          fi
-
-      # Upload the artifact with a simple name
-      - name: "Upload artifact"
-        uses: actions/upload-artifact@v3
-        with:
-          name: scorecard_results  # New artifact name
-          path: results.sarif
-          retention-days: 5
-
-      # Upload the results to GitHub code-scanning dashboard
-      - name: "Upload to code-scanning"
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: results.sarif
+            - name: OSSF Scorecard action
+  # You may pin to the exact commit or the version.
+  # uses: ossf/scorecard-action@f49aabe0b5af0936a0987cfb85d86b75731b0186
+  uses: ossf/scorecard-action@v2.4.1
+  with:
+    # OUTPUT: Path to file to store results
+    results_file: 
+    # OUTPUT: format of the results [json, sarif]
+    results_format: 
+    # INPUT: GitHub token with read access
+    repo_token: # optional, default is ${{ github.token }}
+    # INPUT: Publish results
+    publish_results: # optional
+    # INPUT: Method to fetch files from GitHub
+    file_mode: # optional, default is archive
+    # INPUT: Base URL for publishing results. Used for testing.
+    internal_publish_base_url: # optional, default is https://api.scorecard.dev
+    # INPUT: Default GitHub token. (Internal purpose only, not intended for developers to set. Used for pull requests configured with a PAT).
+    internal_default_token: # optional, default is ${{ github.token }}
+          
