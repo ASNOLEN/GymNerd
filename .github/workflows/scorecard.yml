@@ -5,7 +5,8 @@ on:
   push:
     branches: [ "main" ]
 
-permissions: read-all
+permissions: 
+  read-all
 
 jobs:
   analysis:
@@ -17,26 +18,35 @@ jobs:
 
     steps:
       - name: "Checkout code"
-        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        uses: actions/checkout@v2  # Ensure you are using the latest stable version
         with:
           persist-credentials: false
 
-      - name: "Run analysis"
-        uses: ossf/scorecard-action@0864cf19026789058feabb7e87baa5f140aac736 # v2.3.1
+      - name: "Run Scorecard analysis"
+        uses: ossf/scorecard-action@v2
         with:
           results_file: results.sarif
           results_format: sarif
           publish_results: true
 
-      # Updated: Rename artifact name to avoid issues with spaces
+      - name: "Check if results.sarif exists"
+        run: |
+          if [ ! -f results.sarif ]; then
+            echo "Error: results.sarif file does not exist"
+            exit 1
+          else
+            echo "results.sarif exists"
+          fi
+
+      # Upload the artifact with a simple name
       - name: "Upload artifact"
-        uses: actions/upload-artifact@97a0fba1372883ab732affbe8f94b823f91727db # v3.pre.node20
+        uses: actions/upload-artifact@v3
         with:
-          name: sarif_results   # Fixed: Artifact name without spaces
+          name: scorecard_results  # New artifact name
           path: results.sarif
           retention-days: 5
 
-      # Upload the results to GitHub's code scanning dashboard
+      # Upload the results to GitHub code-scanning dashboard
       - name: "Upload to code-scanning"
         uses: github/codeql-action/upload-sarif@v3
         with:
